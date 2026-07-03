@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reddit Lite — a faster, cleaner Reddit</title>
-<meta name="description" content="Reddit Lite is a free browser extension that makes new Reddit faster and less cluttered: stops autoplay, blocks telemetry, hides ads, and lets you mute posts by keyword, site, or user.">
+<title>Reddit Lite — a lighter, faster Reddit</title>
+<meta name="description" content="Reddit Lite is a free browser extension that makes new Reddit run fast and light: skips rendering off-screen posts, stops autoplay from burning CPU and battery, frees memory as you scroll, blocks Reddit's own telemetry, and cuts the clutter too.">
 <style>
   :root {
     --bg: #17171a;
@@ -538,8 +538,8 @@
 <header class="hero" id="top">
   <div class="wrap">
     <span class="eyebrow"><span class="pulse"></span> Firefox &amp; Chrome &middot; 100% local, no account</span>
-    <h1>A faster, cleaner<br><span class="grad-text">Reddit</span>, on your terms.</h1>
-    <p class="lede">Reddit Lite strips the autoplay, ads, and clutter out of new Reddit, and lets you mute exactly what you don't want to see &mdash; a keyword, a site, or a person.</p>
+    <h1>A lighter, faster<br><span class="grad-text">Reddit</span>, that never lags.</h1>
+    <p class="lede">Reddit Lite is built to make new Reddit run fast and light &mdash; no autoplay chewing through your battery and bandwidth, no lag scrolling busy feeds, and memory that doesn't just keep climbing the longer you browse. Less clutter along the way, too.</p>
     <div class="cta-row">
       <!-- TODO: replace href with the real Firefox AMO listing once published -->
       <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite" id="firefox-link">
@@ -556,36 +556,42 @@
       <span class="trust-pill">Free core, forever</span>
       <span class="trust-pill">No sign-up required</span>
       <span class="trust-pill">Nothing sent anywhere</span>
-      <span class="trust-pill">Fully auditable</span>
     </div>
   </div>
 </header>
 
 <section id="features">
   <div class="wrap">
-    <h2 class="section-title reveal">Everything free, on its own</h2>
-    <p class="section-sub reveal">No account, no sign-up, nothing sent anywhere. Every setting lives on your device.</p>
+    <h2 class="section-title reveal">Built for speed, not just less clutter</h2>
+    <p class="section-sub reveal">Reddit Lite's real job is making new Reddit run fast and light on your machine. No account, no sign-up, nothing sent anywhere &mdash; every setting lives on your device.</p>
     <div class="grid">
-      <div class="card reveal">
-        <div class="icon-sq orange">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-        </div>
-        <h3>No more autoplay</h3>
-        <p>Videos and GIFs wait for you to hit play instead of starting on their own, and mute themselves once you scroll past.</p>
-      </div>
       <div class="card reveal">
         <div class="icon-sq orange">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <h3>A genuinely faster feed</h3>
-        <p>Posts outside your screen aren't rendered until you scroll to them &mdash; the single biggest speed win on busy subreddits.</p>
+        <p>Posts outside your screen aren't rendered until you scroll to them &mdash; the single biggest speed win on busy subreddits like r/all.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-sq orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        </div>
+        <h3>No more autoplay</h3>
+        <p>Videos and GIFs wait for you to hit play, instead of quietly burning through your CPU, battery, and bandwidth the second they appear.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-sq orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12 3 7v10l9 5 9-5V7l-9 5Z"/></svg>
+        </div>
+        <h3>Lighter on memory, CPU, and battery</h3>
+        <p>Off-screen video unloads from memory automatically, and Reddit's own background tracking requests get blocked outright &mdash; so a long session doesn't just keep eating more resources.</p>
       </div>
       <div class="card reveal">
         <div class="icon-sq orange">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="17" x2="17" y2="17"/></svg>
         </div>
-        <h3>Less clutter</h3>
-        <p>Hide ads, recommended posts, the sidebar, chat, hover previews, and Reddit's own premium/coins/awards prompts.</p>
+        <h3>Less to render, less clutter</h3>
+        <p>Hide ads, recommended posts, the sidebar, chat, and hover previews &mdash; less for your browser to load, and less for your eyes to wade through.</p>
       </div>
       <div class="card reveal">
         <div class="icon-sq orange">
@@ -596,17 +602,10 @@
       </div>
       <div class="card reveal">
         <div class="icon-sq orange">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5.2 3.6 9 9 10 5.4-1 9-4.8 9-10V6l-9-4z"/></svg>
-        </div>
-        <h3>Blocks Reddit's own tracking</h3>
-        <p>Stops background telemetry requests, which frees up CPU and battery along the way.</p>
-      </div>
-      <div class="card reveal">
-        <div class="icon-sq orange">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
         <h3>See your own impact</h3>
-        <p>A running tally of ads hidden, autoplay blocked, and posts filtered, with a rough estimate of time saved.</p>
+        <p>A running tally of autoplay blocked, ads hidden, and posts filtered, with a rough estimate of time saved.</p>
       </div>
     </div>
   </div>
