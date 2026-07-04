@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Reddit Lite</title>
+<style>
+  :root {
+    --bg: #1a1a1b;
+    --panel: #242526;
+    --text: #e8e8e8;
+    --muted: #9aa0a6;
+    --accent: #ff4500;
+    --pro: #a78bfa;
+    --border: #343536;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+
+  a { color: #4fb3ff; }
+  a:visited { color: #4fb3ff; }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  header.title {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+  }
+
+  header.title .eyebrow {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  header.title p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 10px 0 0;
+  }
+
+  h2 {
+    font-size: 17px;
+    margin: 32px 0 10px;
+    color: var(--text);
+  }
+
+  p {
+    margin: 0 0 14px;
+    color: var(--text);
+  }
+
+  ul {
+    margin: 0 0 14px;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+
+  .panel p:last-child { margin-bottom: 0; }
+
+  .label-pro {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pro);
+    background: rgba(167,139,250,0.12);
+    border-radius: 3px;
+    padding: 1px 6px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="title">
+    <div class="eyebrow">Reddit Lite</div>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: July 4, 2025</p>
+  </header>
+
+  <div class="panel">
+    <p><strong>Short version:</strong> Reddit Lite stores your settings only on your own device. The extension collects no personal data, sends no analytics anywhere, and the only external network call it ever makes is to verify a Pro license key with Lemon Squeezy — and only if you enter one.</p>
+  </div>
+
+  <h2>What data is stored</h2>
+  <p>All data the extension writes is stored in <code>chrome.storage.local</code> (or Firefox's equivalent) — meaning it stays on your device and is never synced across browsers or sent to any server by the extension itself.</p>
+  <p>This local storage includes:</p>
+  <ul>
+    <li>Your settings (which features are enabled, mute rules, blocked subreddits, etc.)</li>
+    <li>Thread history (up to the last 10 or unlimited for Pro — URLs and titles you visited)</li>
+    <li>Usage dashboard counters (posts filtered, bytes blocked, etc.)</li>
+    <li>Watch list terms</li>
+    <li>Your Pro license key and activation state <span class="label-pro">Pro</span></li>
+  </ul>
+  <p>None of this data leaves your device unless you explicitly export it (e.g., using the thread export feature to save a file locally).</p>
+
+  <h2>External network requests</h2>
+  <p>The extension makes exactly one type of outbound request to an external server: license verification calls to <strong>Lemon Squeezy</strong> (<code>api.lemonsqueezy.com</code>). This only happens if you enter a Pro license key. The request sends your license key and a stable per-install identifier (derived from your browser extension's runtime ID) so Lemon Squeezy can enforce per-key activation limits. No other personal information is included.</p>
+  <p>These calls happen:</p>
+  <ul>
+    <li>When you activate a license key</li>
+    <li>Once daily to re-validate an already-active license</li>
+    <li>When you deactivate a license key</li>
+  </ul>
+  <p>Lemon Squeezy's own privacy policy governs how they handle license data: <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">lemonsqueezy.com/privacy</a>.</p>
+  <p>Users who only use the free tier make <strong>no</strong> external requests at all from the extension.</p>
+
+  <h2>Reddit telemetry blocking</h2>
+  <p>Reddit Lite can optionally block Reddit's own analytics and telemetry requests using the browser's <code>declarativeNetRequest</code> API. This happens entirely within your browser — the extension does not intercept or log the content of blocked requests, it simply prevents them from going out.</p>
+
+  <h2>Permissions used</h2>
+  <ul>
+    <li><strong>storage</strong> — read and write settings to local device storage</li>
+    <li><strong>declarativeNetRequest</strong> — block Reddit's telemetry requests (when enabled)</li>
+    <li><strong>activeTab</strong> — read the current Reddit tab to apply content filtering</li>
+    <li><strong>alarms</strong> — schedule the daily license re-check</li>
+    <li><strong>notifications</strong> — show a desktop notification when a watch-list keyword matches a post</li>
+  </ul>
+
+  <h2>No analytics or tracking</h2>
+  <p>Reddit Lite does not include any analytics SDK, crash reporter, or usage-tracking library. There is no telemetry of any kind built into the extension itself.</p>
+
+  <h2>Data deletion</h2>
+  <p>All locally stored data is removed when you uninstall the extension. You can also clear it manually at any time from <code>chrome://extensions</code> → Reddit Lite → "Clear data", or by using the Reset button in the extension popup.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy? Open an issue or start a discussion on the <a href="https://github.com/Kevin-S-Araujo/Reddit-Lite" target="_blank" rel="noopener">GitHub repository</a>.</p>
+
+  <footer>
+    Reddit Lite is source-available under the <a href="https://github.com/Kevin-S-Araujo/Reddit-Lite/blob/main/LICENSE" target="_blank" rel="noopener">PolyForm Shield License 1.0.0</a>.
+    This policy applies to the browser extension only.
+  </footer>
+
+</div>
+</body>
+</html>
