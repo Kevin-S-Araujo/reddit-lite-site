@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reddit Lite — a lighter, faster Reddit</title>
 <meta name="description" content="Reddit Lite is a free browser extension that makes new Reddit run fast and light: skips rendering off-screen posts, stops autoplay from burning CPU and battery, frees memory as you scroll, blocks Reddit's own telemetry, and cuts the clutter too.">
+<link rel="icon" type="image/png" href="icon128.png">
 <style>
   :root {
     --bg: #17171a;
@@ -413,6 +414,9 @@
     padding: 26px 20px;
     text-align: center;
     border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .compare-head .plan-name {
@@ -428,6 +432,10 @@
     font-size: 22px;
     font-weight: 800;
     margin-bottom: 14px;
+    min-height: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .compare-head .plan-price small {
@@ -523,7 +531,7 @@
   <div class="wrap">
     <a class="brand" href="#top">
       <span class="mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        <img src="icon128.png" alt="Reddit Lite" style="width:19px;height:19px;display:block;border-radius:4px;">
       </span>
       Reddit Lite
     </a>
@@ -653,7 +661,7 @@
         <div class="pro-col" data-label="Pro"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       </div>
       <div class="compare-row">
-        <div class="feature-name">Score filter, hide-seen-posts, blocked subreddits</div>
+        <div class="feature-name">Score &amp; comment-count filter, hide-seen-posts, blocked subreddits</div>
         <div data-label="Free"><svg class="no" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
         <div class="pro-col" data-label="Pro"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       </div>
@@ -673,7 +681,17 @@
         <div class="pro-col" data-label="Pro">Unlimited, batch export</div>
       </div>
       <div class="compare-row">
+        <div class="feature-name">Watch list &amp; desktop notifications</div>
+        <div data-label="Free"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="pro-col" data-label="Pro"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="compare-row">
         <div class="feature-name">Usage dashboard</div>
+        <div data-label="Free"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="pro-col" data-label="Pro"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="compare-row">
+        <div class="feature-name">Profile export &amp; import</div>
         <div data-label="Free"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <div class="pro-col" data-label="Pro"><svg class="yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       </div>
