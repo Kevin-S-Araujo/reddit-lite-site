@@ -550,12 +550,12 @@
     <p class="lede">Reddit Lite is built to make new Reddit run fast and light &mdash; no autoplay chewing through your battery and bandwidth, no lag scrolling busy feeds, and memory that doesn't just keep climbing the longer you browse. Less clutter along the way, too.</p>
     <div class="cta-row">
       <!-- TODO: replace href with the real Firefox AMO listing once published -->
-      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite" id="firefox-link">
+      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite" id="firefox-link" data-browser="firefox">
         🦊 Add to Firefox
         <span class="soon-badge">Coming soon</span>
       </a>
       <!-- TODO: replace href with the real Chrome Web Store listing once published -->
-      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite" id="chrome-link">
+      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite" id="chrome-link" data-browser="chrome">
         🌐 Add to Chrome
         <span class="soon-badge">Coming soon</span>
       </a>
@@ -704,8 +704,8 @@
     <h2 class="section-title">Get Reddit Lite</h2>
     <p class="section-sub">Store listings are on the way — check back soon.</p>
     <div class="cta-row" style="margin-bottom:0;">
-      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite">🦊 Add to Firefox</a>
-      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite">🌐 Add to Chrome</a>
+      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite" data-browser="firefox">🦊 Add to Firefox</a>
+      <a class="btn secondary" href="https://github.com/Kevin-S-Araujo/Reddit-Lite" data-browser="chrome">🌐 Add to Chrome</a>
     </div>
   </div>
 </section>
@@ -718,6 +718,25 @@
 </footer>
 
 <script>
+  // Show only the install button that matches the visitor's browser engine.
+  // Firefox forks (Zen, Waterfox, LibreWolf, Floorp, etc.) all keep the
+  // "Firefox/" token in their UA for site-compatibility, so they're caught
+  // by the same check as Firefox itself. Chromium forks (Brave, Edge, Opera,
+  // Vivaldi, etc.) likewise keep "Chrome/" in their UA -- Brave in particular
+  // deliberately mirrors Chrome's UA string to avoid being fingerprinted.
+  // Anything we don't recognize (e.g. Safari) keeps both buttons visible
+  // rather than guessing which store link would actually work there.
+  (function () {
+    const ua = navigator.userAgent;
+    const isFirefoxFamily = /Firefox\/\d/.test(ua);
+    const isChromiumFamily = !isFirefoxFamily && /(Chrome|Chromium)\/\d/.test(ua);
+    const target = isFirefoxFamily ? "firefox" : isChromiumFamily ? "chrome" : null;
+    if (!target) return;
+    document.querySelectorAll("[data-browser]").forEach((el) => {
+      if (el.dataset.browser !== target) el.style.display = "none";
+    });
+  })();
+
   // Nav shadow/background once you've scrolled past the hero.
   const nav = document.getElementById("nav");
   window.addEventListener("scroll", () => {
